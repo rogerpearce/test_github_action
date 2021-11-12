@@ -1,0 +1,15 @@
+name: CI Test
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Test
+        run: |
+          uname -ar
+          cat /proc/sys/vm/unprivileged_userfaultfd
+          sudo sh -c 'echo 1 > /proc/sys/vm/unprivileged_userfaultfd'
+          cat /proc/sys/vm/unprivileged_userfaultfd
