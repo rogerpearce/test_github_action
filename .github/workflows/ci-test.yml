@@ -7,28 +7,35 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Test
+      - name: GCC9_Boost177_OpenMPI
         run: |
-          uname -ar
-          g++ --version
-          echo ==========================
-          pwd
-          echo ==========================
-          ls -alh
-          echo ==========================
-          gcc-10 --version
-          gcc-9 --version
-          echo ==========================
-          apt-cache search boost
-          echo ==========================
-          apt-cache search openmpi
-          echo ==========================
-          apt-cache search mvapich
-          echo ==========================
-          apt-cache search mpich
-          #sudo apt-get install openmpi-bin libopenmpi-dev
-          #which mpicxx
-          #echo mpicc --show
-          #mpicc --show 
-          #sudo apt-get install boost
-          #cat /usr/include/boost/version.hpp
+          g++-9 --version
+          wget https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.bz2
+          tar -xzf boost_1_77_0.tar.bz2
+          ls boost_1_77_0
+          sudo apt-get install openmpi-bin libopenmpi-dev
+          mpicc --show
+      - name: GCC10_Boost177_OpenMPI
+        run: |
+          g++-10 --version
+          wget https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.bz2
+          tar -xzf boost_1_77_0.tar.bz2
+          ls boost_1_77_0
+          sudo apt-get install openmpi-bin libopenmpi-dev
+          mpicc --show
+      - name: GCC9_Boost177_Mpich
+        run: |
+          g++-9 --version
+          wget https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.bz2
+          tar -xzf boost_1_77_0.tar.bz2
+          ls boost_1_77_0
+          sudo apt-get install mpich
+          mpicc --show
+      - name: GCC10_Boost177_Mpich
+        run: |
+          g++-10 --version
+          wget https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.bz2
+          tar -xzf boost_1_77_0.tar.bz2
+          ls boost_1_77_0
+          sudo apt-get install mpich
+          mpicc --show
