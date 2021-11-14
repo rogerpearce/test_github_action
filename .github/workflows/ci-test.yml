@@ -10,6 +10,8 @@ jobs:
       - name: Test
         run: |
           uname -ar
-          cat /proc/sys/vm/unprivileged_userfaultfd
-          sudo sh -c 'echo 1 > /proc/sys/vm/unprivileged_userfaultfd'
-          cat /proc/sys/vm/unprivileged_userfaultfd
+          which gcc
+          cat /usr/include/boost/version.hpp
+          sudo apt-get install openmpi-bin libopenmpi-dev
+          which mpicxx
+          mpicc --show
