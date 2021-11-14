@@ -10,32 +10,32 @@ jobs:
       - name: GCC9_Boost177_OpenMPI
         run: |
           g++-9 --version
-          wget https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.bz2
-          tar -xzf boost_1_77_0.tar.bz2
+          wget --no-verbose https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.bz2
+          tar -xjf boost_1_77_0.tar.bz2
           ls boost_1_77_0
           sudo apt-get install openmpi-bin libopenmpi-dev
           mpicc --show
       - name: GCC10_Boost177_OpenMPI
         run: |
           g++-10 --version
-          wget https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.bz2
-          tar -xzf boost_1_77_0.tar.bz2
+          wget --no-verbose https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.bz2
+          tar -xjf boost_1_77_0.tar.bz2
           ls boost_1_77_0
           sudo apt-get install openmpi-bin libopenmpi-dev
           mpicc --show
       - name: GCC9_Boost177_Mpich
         run: |
           g++-9 --version
-          wget https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.bz2
-          tar -xzf boost_1_77_0.tar.bz2
+          wget --no-verbose https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.bz2
+          tar -xjf boost_1_77_0.tar.bz2
           ls boost_1_77_0
           sudo apt-get install mpich
           mpicc --show
       - name: GCC10_Boost177_Mpich
         run: |
           g++-10 --version
-          wget https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.bz2
-          tar -xzf boost_1_77_0.tar.bz2
+          wget --no-verbose https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.bz2
+          tar -xjf boost_1_77_0.tar.bz2
           ls boost_1_77_0
           sudo apt-get install mpich
           mpicc --show
