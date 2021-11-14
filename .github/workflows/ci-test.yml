@@ -16,7 +16,7 @@ jobs:
       - name: Make
         run: |
           echo Run 'make'
-          mpicc --show
+          mpicc -show
           g++-9 --version
       - name: Make test
         run: |
@@ -34,7 +34,7 @@ jobs:
       - name: Make
         run: |
           echo Run 'make'
-          mpicc --show
+          mpicc -show
           g++-10 --version
       - name: Make test
         run: |
@@ -52,7 +52,7 @@ jobs:
       - name: Make
         run: |
           echo Run 'make'
-          mpicc --show
+          mpicc -show
           g++-9 --version
       - name: Make test
         run: |
@@ -70,7 +70,7 @@ jobs:
       - name: Make
         run: |
           echo Run 'make'
-          mpicc --show
+          mpicc -show
           g++-10 --version
       - name: Make test
         run: |
