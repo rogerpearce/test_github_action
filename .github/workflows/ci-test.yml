@@ -10,15 +10,16 @@ jobs:
       - name: Test
         run: |
           uname -ar
-          which gcc
+          g++ --version
           echo ==========================
           pwd
           echo ==========================
           ls -alh
           echo ==========================
-          sudo apt-get install openmpi-bin libopenmpi-dev
-          which mpicxx
-          echo mpicc --show
-          mpicc --show 
-          sudo apt-get install boost
-          cat /usr/include/boost/version.hpp
+          export
+          #sudo apt-get install openmpi-bin libopenmpi-dev
+          #which mpicxx
+          #echo mpicc --show
+          #mpicc --show 
+          #sudo apt-get install boost
+          #cat /usr/include/boost/version.hpp
