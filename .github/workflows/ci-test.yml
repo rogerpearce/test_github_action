@@ -14,4 +14,4 @@ jobs:
           cat /usr/include/boost/version.hpp
           sudo apt-get install openmpi-bin libopenmpi-dev
           which mpicxx
-          mpicc --show
+          mpicc --show 
