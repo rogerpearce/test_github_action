@@ -11,7 +11,7 @@ jobs:
         run: |
           uname -ar
           which gcc
-          cat /usr/include/boost/version.hpp
           sudo apt-get install openmpi-bin libopenmpi-dev
           which mpicxx
           mpicc --show 
+          apt-get search boost
