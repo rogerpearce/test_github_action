@@ -7,13 +7,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Prep
+      - name: Install Dependencies
         run: |
           wget --no-verbose https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.bz2
           tar -xjf boost_1_77_0.tar.bz2
           ls boost_1_77_0
           sudo apt-get install openmpi-bin libopenmpi-dev
-      - name: Test
+      - name: Make
         run: |
+          echo Run 'make'
           mpicc --show
           g++-9 --version
+      - name: Make test
+        run: |
+          echo Run 'make test'
