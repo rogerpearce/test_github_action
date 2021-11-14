@@ -18,6 +18,14 @@ jobs:
           echo ==========================
           gcc-10 --version
           gcc-9 --version
+          echo ==========================
+          apt-cache search boost
+          echo ==========================
+          apt-cache search openmpi
+          echo ==========================
+          apt-cache search mvapich
+          echo ==========================
+          apt-cache search mpich
           #sudo apt-get install openmpi-bin libopenmpi-dev
           #which mpicxx
           #echo mpicc --show
