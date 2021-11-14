@@ -8,12 +8,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: GCC9_Boost177_OpenMPI
-        run: |
+      - run: |
           wget --no-verbose https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.bz2
           tar -xjf boost_1_77_0.tar.bz2
           ls boost_1_77_0
-        run: sudo apt-get install openmpi-bin libopenmpi-dev
-        run: |
+      - run: sudo apt-get install openmpi-bin libopenmpi-dev
+      - run: |
           mpicc --show
           g++-9 --version
       - name: GCC10_Boost177_OpenMPI
