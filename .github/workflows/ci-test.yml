@@ -1,17 +1,19 @@
 name: CI Test
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   GCC9_Boost177_OpenMPI:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Test
+      - name: Prep
         run: |
           wget --no-verbose https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.bz2
           tar -xjf boost_1_77_0.tar.bz2
           ls boost_1_77_0
           sudo apt-get install openmpi-bin libopenmpi-dev
+      - name: Test
+        run: |
           mpicc --show
           g++-9 --version
