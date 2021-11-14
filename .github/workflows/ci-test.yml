@@ -13,9 +13,8 @@ jobs:
           tar -xjf boost_1_77_0.tar.bz2
           ls boost_1_77_0
         run: sudo apt-get install openmpi-bin libopenmpi-dev
-        run: |
-          mpicc --show
-          g++-9 --version
+        run: mpicc --show
+        run: g++-9 --version
       - name: GCC10_Boost177_OpenMPI
         run: |
           g++-10 --version
