@@ -3,6 +3,24 @@ name: CI Test
 on: [push, pull_request]
 
 jobs:
+  GCC8_Boost177_OpenMPI:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Dependencies
+        run: |
+          wget --no-verbose https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.bz2
+          tar -xjf boost_1_77_0.tar.bz2
+          ls boost_1_77_0
+          sudo apt-get install openmpi-bin libopenmpi-dev
+      - name: Make
+        run: |
+          echo Run 'make'
+          mpicc -show
+          g++-8 --version
+      - name: Make test
+        run: |
+          echo Run 'make test'
   GCC9_Boost177_OpenMPI:
     runs-on: ubuntu-latest
     steps:
